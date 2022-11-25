@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.Soiree">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LES SOIREE A VENIR"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <Button
+        android:id="@+id/Deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deconnexion"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="643dp" />
+
+    <Button
+        android:id="@+id/SuprCompte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer mon compte"
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="643dp" />
+
+    <Button
+        android:id="@+id/AjtSoiree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter ma Soirée"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="486dp" />
+
+    <Button
+        android:id="@+id/MapSoiree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carte des Soiree"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="545dp" />
+
+    <ListView
+        android:id="@+id/LvSoiree"
+        android:layout_width="362dp"
+        android:layout_height="375dp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="85dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

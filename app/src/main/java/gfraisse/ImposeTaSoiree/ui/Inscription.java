@@ -1,11 +1,12 @@
 package gfraisse.ImposeTaSoiree.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.widget.Button;
 import android.widget.TextView;
 
-import gfraisse.ImposeTaSoiree.Daos.Etudiant;
+import androidx.appcompat.app.AppCompatActivity;
+
 import gfraisse.ImposeTaSoiree.R;
 import gfraisse.ImposeTaSoiree.net.WSConnexionHTTPS;
 
@@ -22,9 +23,8 @@ public class Inscription extends AppCompatActivity {
             WSConnexionHTTPS ws = new WSConnexionHTTPS(){
                 @Override
                 public void onPostExecute(String s){
-                    boolean wsRet = Etudiant.
                 }
-            }
+            };
             String Login = ((TextView)findViewById(R.id.a)).getText().toString();
             String password = ((TextView)findViewById(R.id.b)).getText().toString();
             String Nom = ((TextView)findViewById(R.id.c)).getText().toString();
