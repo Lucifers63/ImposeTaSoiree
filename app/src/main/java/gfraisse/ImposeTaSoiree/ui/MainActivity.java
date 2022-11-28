@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject jsono = new JSONObject(s);
             if ((Boolean) jsono.get("success")){
                 Toast.makeText(this, "Authentification Réussie !", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, Soiree.class) ;
+                Intent intent = new Intent(this, SoireeActivity.class) ;
                 startActivity(intent);
             }else {
                 Toast.makeText(this,"Login ou mot de passe non valide !!", Toast.LENGTH_SHORT).show();
