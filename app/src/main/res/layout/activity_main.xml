@@ -97,7 +97,7 @@
         android:ems="10"
         android:hint="Login"
         android:inputType="textPersonName"
-        android:text="gfraisse"
+        android:text="GFraisse"
         android:textAllCaps="false"
         android:textColor="#FFF9F9"
         android:textColorHint="#FFFFFF"
