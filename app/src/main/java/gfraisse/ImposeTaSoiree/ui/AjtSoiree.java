@@ -35,8 +35,7 @@ public class AjtSoiree extends AppCompatActivity {
                     "&descriptif="+ ((TextView)findViewById(R.id.Descript)).getText().toString()+
                     "&dateDebut=" +((TextView)findViewById(R.id.DateSoiree)).getText().toString()+
                     "&heureDebut="+((TextView)findViewById(R.id.HeureSoiree)).getText().toString() +
-                    "&latitude=" +((TextView)findViewById(R.id.lat)).getText().toString()+
-                    "&longitude="+((TextView)findViewById(R.id.lng)).getText().toString());
+                    "&adresse=" +((TextView)findViewById(R.id.adr)).getText().toString());
         });
     }
 

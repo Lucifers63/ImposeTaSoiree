@@ -2,22 +2,24 @@ package gfraisse.ImposeTaSoiree.Daos;
 
 public class Soiree {
     private String libelleCourt;
-    private String Descriptig;
+    private String Descriptif;
     private String dateDebut;
     private String heureDebut;
     private String lat;
     private String lng;
     private String Adr;
 
-    public Soiree(String libelleCourt, String descriptig, String dateDebut, String heureDebut, String lat, String lng, String adr) {
+    public Soiree(String libelleCourt, String descriptif, String dateDebut, String heureDebut, String lat, String lng, String adr) {
         this.libelleCourt = libelleCourt;
-        Descriptig = descriptig;
+        this.Descriptif = descriptif;
         this.dateDebut = dateDebut;
         this.heureDebut = heureDebut;
         this.lat = lat;
         this.lng = lng;
-        Adr = adr;
+        this.Adr = adr;
     }
+
+
 
     public String getLibelleCourt() {
         return libelleCourt;
@@ -28,11 +30,11 @@ public class Soiree {
     }
 
     public String getDescriptig() {
-        return Descriptig;
+        return Descriptif;
     }
 
-    public void setDescriptig(String descriptig) {
-        Descriptig = descriptig;
+    public void setDescriptig(String descriptif) {
+        Descriptif = descriptif;
     }
 
     public String getDateDebut() {
@@ -79,7 +81,7 @@ public class Soiree {
     public String toString() {
         return "Soiree{" +
                 "libelleCourt='" + libelleCourt + '\'' +
-                ", Descriptig='" + Descriptig + '\'' +
+                ", Descriptif='" + Descriptif + '\'' +
                 ", dateDebut='" + dateDebut + '\'' +
                 ", heureDebut='" + heureDebut + '\'' +
                 ", lat='" + lat + '\'' +

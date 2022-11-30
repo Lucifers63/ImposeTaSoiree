@@ -16,7 +16,7 @@
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lat" />
+        app:layout_constraintTop_toBottomOf="@+id/adr" />
 
     <Button
         android:id="@+id/ValidSoiree"
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/RetourAccueil"
-        app:layout_constraintTop_toBottomOf="@+id/lat" />
+        app:layout_constraintTop_toBottomOf="@+id/adr" />
 
     <TextView
         android:id="@+id/textView4"
@@ -104,33 +104,17 @@
         app:layout_constraintTop_toBottomOf="@+id/DateSoiree" />
 
     <EditText
-        android:id="@+id/lat"
+        android:id="@+id/adr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
-        android:hint="Latitude"
+        android:hint="Adresse"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HeureSoiree" />
-
-    <EditText
-        android:id="@+id/lng"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="250dp"
-        android:ems="10"
-        android:hint="Longitude"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
