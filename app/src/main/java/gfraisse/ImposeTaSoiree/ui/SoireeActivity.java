@@ -22,7 +22,7 @@ import gfraisse.ImposeTaSoiree.R;
 import gfraisse.ImposeTaSoiree.net.WSConnexionHTTPS;
 
 public class SoireeActivity extends AppCompatActivity {
-
+    public static List<Soiree> soireeList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +51,15 @@ public class SoireeActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AjtSoiree.class);
             startActivity(intent);
         });
-
+        ((ListView)findViewById(R.id.LvSoiree)).setOnItemClickListener((adapterView, view, i, l )->{
+            Intent intent = new Intent(this, InscripSoiree.class);
+            intent.putExtra("i",i);
+            startActivity((intent));
+        });
+        findViewById(R.id.gestionSoiree).setOnClickListener(v -> {
+            Intent intent = new Intent(this, GestionSoiree.class);
+            startActivity(intent);
+        });
     }
 
     private void createListSoiree() {
@@ -66,7 +74,7 @@ public class SoireeActivity extends AppCompatActivity {
 
     private void traiterGetSoiree(String s) {
         Log.d("TraiterGetSoiree",s);
-        List<Soiree> soireeList = new ArrayList<>();
+        soireeList = new ArrayList<>();
         try {
             JSONObject jsono = new JSONObject(s);
             if ((boolean) jsono.get("success")) {
@@ -75,6 +83,7 @@ public class SoireeActivity extends AppCompatActivity {
                 JSONArray jsona = new JSONArray(jsono.getString("response"));
                 for (int i = 0; i < jsona.length(); i++) {
                     JSONObject jsonob = jsona.getJSONObject(i);
+                    int id = jsonob.getInt("id");
                     String libelleCourt = jsonob.getString("libelleCourt");
                     String descriptif = jsonob.getString("descriptif");
                     String dateDebut = jsonob.getString("dateDebut");
@@ -82,7 +91,8 @@ public class SoireeActivity extends AppCompatActivity {
                     String Adr = jsonob.getString("adresse");
                     String lat = jsonob.getString("latitude");
                     String lng = jsonob.getString("longitude");
-                    Soiree so = new Soiree(libelleCourt, descriptif, dateDebut, heureDebut, Adr, lat, lng);
+                    String login = jsonob.getString("login");
+                    Soiree so = new Soiree(id, libelleCourt, descriptif, dateDebut, heureDebut, Adr, lat, lng, login);
                     soireeList.add(so);
                 }ArrayAdapter adapt = new ArrayAdapter<>(
                         this, android.R.layout.simple_list_item_1, soireeList);

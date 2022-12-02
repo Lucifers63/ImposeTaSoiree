@@ -15,7 +15,7 @@ import gfraisse.ImposeTaSoiree.R;
 import gfraisse.ImposeTaSoiree.net.WSConnexionHTTPS;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static String login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.Connexion).setOnClickListener(v->{
             WSConnexionHTTPS ws = new WSConnexionHTTPS(){
                 @Override
-                protected void onPostExecute(String s){traiterConnexion(s);}
+                protected void onPostExecute(String s){traiterConnexion(s);
+                    Log.d("TAGTAG", "onPostExecute: "+login);}
             };
             ws.execute("requete=connexion&login="+((TextView)findViewById(R.id.log1)).getText().toString()+"&password="+((TextView)findViewById(R.id.Pass1)).getText().toString());
         });
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             JSONObject jsono = new JSONObject(s);
             if ((Boolean) jsono.get("success")){
                 Toast.makeText(this, "Authentification Réussie !", Toast.LENGTH_SHORT).show();
+                jsono = jsono.getJSONObject("response");
+                MainActivity.login = jsono.getString("login");
                 Intent intent = new Intent(this, SoireeActivity.class) ;
                 startActivity(intent);
             }else {

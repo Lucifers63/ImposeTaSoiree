@@ -1,6 +1,7 @@
 package gfraisse.ImposeTaSoiree.Daos;
 
 public class Soiree {
+    private int id;
     private String libelleCourt;
     private String Descriptif;
     private String dateDebut;
@@ -8,8 +9,10 @@ public class Soiree {
     private String lat;
     private String lng;
     private String Adr;
+    private String login;
 
-    public Soiree(String libelleCourt, String descriptif, String dateDebut, String heureDebut, String lat, String lng, String adr) {
+    public Soiree(int id, String libelleCourt, String descriptif, String dateDebut, String heureDebut, String lat, String lng, String adr, String login) {
+        this.id = id;
         this.libelleCourt = libelleCourt;
         this.Descriptif = descriptif;
         this.dateDebut = dateDebut;
@@ -17,9 +20,20 @@ public class Soiree {
         this.lat = lat;
         this.lng = lng;
         this.Adr = adr;
+        this.login = login;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getDescriptif() {
+        return Descriptif;
+    }
+
+    public String getLogin() {
+        return login;
+    }
 
     public String getLibelleCourt() {
         return libelleCourt;
@@ -79,14 +93,6 @@ public class Soiree {
 
     @Override
     public String toString() {
-        return "Soiree{" +
-                "libelleCourt='" + libelleCourt + '\'' +
-                ", Descriptif='" + Descriptif + '\'' +
-                ", dateDebut='" + dateDebut + '\'' +
-                ", heureDebut='" + heureDebut + '\'' +
-                ", lat='" + lat + '\'' +
-                ", lng='" + lng + '\'' +
-                ", Adr='" + Adr + '\'' +
-                '}';
+        return   libelleCourt + ' ' + dateDebut + ' ' + heureDebut + ' ' + Adr ;
     }
 }
